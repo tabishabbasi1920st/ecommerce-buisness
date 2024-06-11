@@ -3,49 +3,67 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const NavbarLinks = [
   {
     id: "SEARCH",
-    name: "search",
-    icon: <IoSearch color="#fff" fontSize={33} />,
+    name: "Search",
+    icon: <IoSearch fontSize={33} />,
     route: "/search",
     title: "Search",
   },
   {
     id: "USER",
-    name: "user",
-    icon: <FaRegUser color="#fff" fontSize={28} />,
+    name: "User",
+    icon: <FaRegUser fontSize={28} />,
     route: "/user-profile",
     title: "Profile",
   },
   {
     id: "CART",
-    name: "cart",
-    icon: <AiOutlineShoppingCart color="#fff" fontSize={30} />,
+    name: "Cart",
+    icon: <AiOutlineShoppingCart fontSize={30} />,
     route: "/cart",
     title: "Cart",
   },
   {
     id: "ABOUT_US",
-    name: "aboutUs",
-    icon: <BiMessageSquareDetail color="#fff" fontSize={30} />,
+    name: "AboutUs",
+    icon: <BiMessageSquareDetail fontSize={30} />,
     route: "/about-us",
     title: "About Us",
   },
 ];
 
 const Navbar = () => {
-  const renderLogo = () => <LogoTxt>Logo</LogoTxt>;
+  const navigate = useNavigate();
+
+  const renderLogo = () => (
+    <LogoTxt onClick={() => navigate("/")}>Logo</LogoTxt>
+  );
+
+  const isLinkActive = (route) => {
+    const url = new URL(window.location.href);
+    const pathname = url.pathname;
+    return pathname === route;
+  };
 
   const renderNavLinks = () => {
     return (
       <NavLinksContainer>
         {NavbarLinks.map((link) => (
-          <Link key={link.id} to={link.route} title={link.title}>
-            <LinkButton>{link.icon}</LinkButton>
-          </Link>
+          <CustomNavLink
+            key={link.id}
+            to={link.route}
+            title={link.title}
+            isActive={isLinkActive(link.route)}
+          >
+            <LinkButton isActive={isLinkActive(link.route)}>
+              {link.icon}
+            </LinkButton>
+            <LinkName isActive={isLinkActive(link.route)}>{link.name}</LinkName>
+          </CustomNavLink>
         ))}
       </NavLinksContainer>
     );
@@ -71,6 +89,7 @@ const MainContainer = styled.nav`
 
 const LogoTxt = styled.h1`
   font-size: 30px;
+  cursor: pointer;
 `;
 
 const NavLinksContainer = styled.ul`
@@ -81,9 +100,34 @@ const NavLinksContainer = styled.ul`
   margin-left: auto;
 `;
 
+const CustomNavLink = styled(NavLink)`
+  color: ${({ isActive }) => (isActive ? "red" : "#fff")};
+  background-color: ${({ isActive }) => (isActive ? "#c8e6c9" : "transparent")};
+  border-radius: 5px;
+
+  @media screen and (min-width: 576px) {
+    padding: 5px;
+  }
+`;
+
 const LinkButton = styled.button`
-  height: 50px;
-  width: 35px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 5px;
   border: none;
-  background-color: transparent;
+  background-color: ${({ isActive }) => (isActive ? "#c8e6c9" : "transparent")};
+  color: ${({ isActive }) => (isActive ? "#757575" : "#fff")};
+
+  @media screen and (min-width: 576px) {
+    display: none;
+  }
+`;
+
+const LinkName = styled.p`
+  color: ${({ isActive }) => (isActive ? "#757575" : "#fff")};
+  font-size: 18px;
+
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 `;

@@ -1,9 +1,18 @@
-import React from 'react'
+import styled from "styled-components";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 const Search = () => {
   return (
-    <div>Search</div>
-  )
-}
+    <MainContainer>
+      <Header>
+        <Navbar />
+      </Header>
+      Search
+    </MainContainer>
+  );
+};
 
-export default Search
+export default Search;
+
+const MainContainer = styled.div``;
