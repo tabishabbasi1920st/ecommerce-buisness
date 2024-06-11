@@ -1,9 +1,18 @@
-import React from 'react'
+import styled from "styled-components";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <MainContainer>
+      <Navbar />
+      Home
+    </MainContainer>
+  );
+};
 
-export default Home
+export default Home;
+
+const MainContainer = styled.div`
+  min-height: 100vh;
+  width: 100%;
+`;
