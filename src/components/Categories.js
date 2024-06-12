@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
 
 const categoriesList = [
@@ -24,43 +25,56 @@ const categoriesList = [
   { id: "VIDEO_GAMES", name: " Games" },
 ];
 
-const plateformConstants = {
-  mobile: "MOBILE",
-  other: "OTHER",
-};
-
 const Categories = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(undefined);
-  const [plateform, setPlateform] = useState(plateformConstants.mobile);
+  const categoryContainerRef = useRef();
 
-  useEffect(() => {
-    const isMobile =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-
-    if (isMobile) {
-      setPlateform(plateformConstants.mobile);
-    } else {
-      setPlateform(plateformConstants.other);
+  const scrollLeft = () => {
+    if (categoryContainerRef.current) {
+      categoryContainerRef.current.scrollBy({
+        left: -200,
+        behavior: "smooth",
+      });
     }
-  }, []);
+  };
+
+  const scrollRight = () => {
+    if (categoryContainerRef.current) {
+      categoryContainerRef.current.scrollBy({
+        left: 200,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <CategoriesContainer plateform={plateform}>
-      {categoriesList.map((category) => (
-        <CategoryItem
-          isSelected={selectedCategoryId === category.id}
-          onClick={() => setSelectedCategoryId(category.id)}
-        >
-          {category.name}
-        </CategoryItem>
-      ))}
-    </CategoriesContainer>
+    <MainContainer>
+      <ScrollButton onClick={scrollLeft}>
+        <MdKeyboardArrowLeft />
+      </ScrollButton>
+      <CategoriesContainer ref={categoryContainerRef}>
+        {categoriesList.map((category) => (
+          <CategoryItem
+            isSelected={selectedCategoryId === category.id}
+            onClick={() => setSelectedCategoryId(category.id)}
+          >
+            {category.name}
+          </CategoryItem>
+        ))}
+      </CategoriesContainer>
+      <ScrollButton onClick={scrollRight}>
+        <MdKeyboardArrowRight />
+      </ScrollButton>
+    </MainContainer>
   );
 };
 
 export default Categories;
+
+const MainContainer = styled.div`
+  display: flex;
+  overflow: hidden;
+`;
 
 const CategoriesContainer = styled.ul`
   display: flex;
@@ -68,17 +82,9 @@ const CategoriesContainer = styled.ul`
   align-items: center;
   overflow: auto;
   padding: 10px 10px;
-  margin-top: 10px;
 
   &::-webkit-scrollbar {
-    display: ${({ plateform }) =>
-      plateform === plateformConstants.mobile ? "none" : "block"};
-    height: 10px;
-  }
-
-  &&::-webkit-scrollbar-thumb {
-    background: #4caf50;
-    border-radius: 2px;
+    display: none;
   }
 `;
 
@@ -91,7 +97,23 @@ const CategoryItem = styled.li`
   height: 40px;
   width: auto;
   background-color: ${({ isSelected }) => (isSelected ? "#4CAF50" : "#c8e6c9")};
-  color: ${({ isSelected }) => (isSelected ? "#fff" : "#000")};
+  color: ${({ isSelected }) => (isSelected ? "#fff" : "#36454f")};
   cursor: pointer;
   font-size: 17px;
+  font-weight: 500;
+`;
+
+const ScrollButton = styled.button`
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;

@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
+import RecommendedProducts from "../components/RecommendedProducts";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner />
       <Main>
         <Categories />
+        <RecommendedProducts />
       </Main>
       <Footer></Footer>
     </MainContainer>
