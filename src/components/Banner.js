@@ -73,9 +73,14 @@ export default Banner;
 
 const MainContainer = styled.div`
   max-width: 100%;
-  display: flex;
-  justify-content: space-between;
   position: relative;
+  max-height: 300px;
+  overflow: hidden;
+  @media screen and (min-width: 1700px) {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const ArrowBtnsContainer = styled.div`
@@ -83,8 +88,8 @@ const ArrowBtnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: transparent;
-  width: 99.9vw;
-  height: 50%;
+  width: 100%;
+  height: 100%;
 `;
 
 const ArrowBtns = styled.button`

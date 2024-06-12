@@ -10,7 +10,35 @@ const Home = () => {
         <Navbar />
       </Header>
       <Banner />
-      <Main>Home main</Main>
+      <Main>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+        <li>Home main</li>
+      </Main>
       <Footer></Footer>
     </MainContainer>
   );
@@ -26,10 +54,21 @@ const MainContainer = styled.div`
 `;
 
 const Main = styled.main`
-  border: 2px solid red;
   flex-grow: 1;
+
+  @media screen and (min-width: 1700px) {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const Footer = styled.footer`
   border: 2px solid blue;
+
+  @media screen and (min-width: 1700px) {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
