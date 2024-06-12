@@ -9,7 +9,7 @@ const Banner = () => {
     {
       id: uuidv4(),
       imageUrl:
-        "https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Kartik/MAYGTM2022/2024/PC_Hero_3000x1200_Electricityjpg._CB555882039_.jpg",
+        "https://res.cloudinary.com/dctfbwk0m/image/upload/v1718170286/MED_Hero_PC3000-x-1200_Multi_bank._CB555355873__ys7xl5.jpg",
       redirectLink: "",
       serialNumber: 1,
     },
@@ -30,7 +30,7 @@ const Banner = () => {
     {
       id: uuidv4(),
       imageUrl:
-        "https://res.cloudinary.com/dctfbwk0m/image/upload/v1718170286/MED_Hero_PC3000-x-1200_Multi_bank._CB555355873__ys7xl5.jpg",
+        "https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Kartik/MAYGTM2022/2024/PC_Hero_3000x1200_Electricityjpg._CB555882039_.jpg",
       redirectLink: "",
       serialNumber: 4,
     },

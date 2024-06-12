@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
+import Categories from "../components/Categories";
 
 const Home = () => {
   return (
@@ -11,33 +12,7 @@ const Home = () => {
       </Header>
       <Banner />
       <Main>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
-        <li>Home main</li>
+        <Categories />
       </Main>
       <Footer></Footer>
     </MainContainer>

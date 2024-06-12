@@ -3,10 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import EcommerceContextProvider from "./context/EcommerceContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <EcommerceContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </EcommerceContextProvider>
 );
