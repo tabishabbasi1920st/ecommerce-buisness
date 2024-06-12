@@ -9,10 +9,8 @@ const Home = () => {
       <Header>
         <Navbar />
       </Header>
-      <Main>
-        <Banner />
-        Home main
-      </Main>
+      <Banner />
+      <Main>Home main</Main>
       <Footer></Footer>
     </MainContainer>
   );
@@ -28,7 +26,7 @@ const MainContainer = styled.div`
 `;
 
 const Main = styled.main`
-  /* border: 2px solid red; */
+  border: 2px solid red;
   flex-grow: 1;
 `;
 
