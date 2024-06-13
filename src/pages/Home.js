@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import RecommendedProducts from "../components/RecommendedProducts";
+import NewlyArrivalProducts from "../components/NewlyArrivalProducts";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Main>
         <Categories />
         <RecommendedProducts />
+        <NewlyArrivalProducts />
       </Main>
       <Footer></Footer>
     </MainContainer>
