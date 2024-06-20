@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { CiFilter } from "react-icons/ci";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+import FilterSidebar from "../components/FilterSidebar";
 import ProductCardList from "../components/ProductCardList";
+import { useState } from "react";
 
 const searchList = [
   {
@@ -890,13 +893,21 @@ const searchList = [
 ];
 
 const Search = () => {
+  const [showFilterInSm, setShowFilterInSm] = useState(false);
+
   return (
     <MainContainer>
       <Header>
         <Navbar />
       </Header>
+      <Searchbar />
       <Main>
-        <Searchbar />
+        <FilterBtn onClick={() => setShowFilterInSm((prevState) => !prevState)}>
+          <CiFilter fontSize={25} />
+          {showFilterInSm ? "Hide Filters" : "Show Filters"}
+        </FilterBtn>
+        <FilterSidebar showInSm={showFilterInSm} showInLg={false} />
+        <FilterSidebar showInSm={false} showInLg={true} />
         <SearchResult>
           {searchList.map((product) => (
             <ProductCardList product={product} key={product.id} />
@@ -920,11 +931,45 @@ const MainContainer = styled.div`
 const Main = styled.main`
   flex-grow: 1;
 
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
+
   @media screen and (min-width: 1700px) {
     width: 1440px;
     margin-left: auto;
     margin-right: auto;
   }
+`;
+
+const FilterBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  height: 40px;
+  margin: 20px 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+const SearchResult = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  /* @media screen and (min-width: 1024px) {
+    padding: 0px 5%;
+  } */
 `;
 
 const Footer = styled.footer`
@@ -935,14 +980,4 @@ const Footer = styled.footer`
     margin-left: auto;
     margin-right: auto;
   }
-`;
-
-const SearchResult = styled.div`
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-
-  /* @media screen and (min-width: 1024px) {
-    padding: 0px 5%;
-  } */
 `;

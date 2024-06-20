@@ -50,9 +50,9 @@ const MainContainer = styled.li`
     width: 50%;
   }
 
-  @media screen and (min-width: 1025px) {
+  /* @media screen and (min-width: 1025px) {
     width: 33.33%;
-  }
+  } */
 `;
 
 const Card = styled.div`
