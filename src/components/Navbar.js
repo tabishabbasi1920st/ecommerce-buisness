@@ -4,8 +4,16 @@ import { FaRegUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { NavLink, useNavigate } from "react-router-dom";
+import { IoHomeOutline } from "react-icons/io5";
 
 const NavbarLinks = [
+  {
+    id: "HOME",
+    name: "Home",
+    icon: <IoHomeOutline fontSize={25} />,
+    route: "/",
+    title: "Home",
+  },
   {
     id: "SEARCH",
     name: "Search",
