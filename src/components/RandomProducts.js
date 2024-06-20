@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import ProductCardGrid from "./ProductCardGrid";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { useRef } from "react";
+import ProductCardList from "./ProductCardList";
 
-const recommendedProductList = [
+const randomProducts = [
   {
     id: 29,
     title: "Mid-Century Modern Wooden Dining Table",
@@ -174,51 +172,23 @@ const recommendedProductList = [
   },
 ];
 
-const RecommendedProducts = () => {
-  const productContainerRef = useRef();
-
-  const scrollLeft = () => {
-    if (productContainerRef.current) {
-      productContainerRef.current.scrollBy({
-        left: -200,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (productContainerRef.current) {
-      productContainerRef.current.scrollBy({
-        left: 200,
-        behavior: "smooth",
-      });
-    }
-  };
-
+const RandomProducts = () => {
   return (
     <MainContainer>
-      <MainHeading>Recommended Products</MainHeading>
-      <ButtonsContainer>
-        <ScrollButton onClick={scrollLeft}>
-          <MdKeyboardArrowLeft />
-        </ScrollButton>
-
-        <Products ref={productContainerRef}>
-          {recommendedProductList.map((product) => (
-            <ProductCardGrid key={product.id} product={product} />
-          ))}
-        </Products>
-        <ScrollButton onClick={scrollRight}>
-          <MdKeyboardArrowRight />
-        </ScrollButton>
-      </ButtonsContainer>
+      <MainHeading>Products</MainHeading>
+      <Products>
+        {randomProducts.map((product) => (
+          <ProductCardList product={product} key={product.id} />
+        ))}
+      </Products>
     </MainContainer>
   );
 };
 
-export default RecommendedProducts;
+export default RandomProducts;
 
 const MainContainer = styled.div`
+  /* border: 2px solid red; */
   margin-top: 20px;
 `;
 
@@ -230,33 +200,8 @@ const MainHeading = styled.h1`
   padding-left: 10px;
 `;
 
-const ButtonsContainer = styled.div`
-  display: flex;
-  overflow: hidden;
-`;
-
-const ScrollButton = styled.button`
-  border: none;
-  background-color: transparent;
-  font-size: 25px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
 const Products = styled.ul`
+  padding: 5px;
   display: flex;
-  overflow: auto;
-  flex-grow: 1;
-  padding: 10px 10px;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  flex-wrap: wrap;
 `;

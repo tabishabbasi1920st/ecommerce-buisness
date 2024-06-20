@@ -46,6 +46,7 @@ const Card = styled.div`
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: 1px 1px 5px 1px #bfbfbf;
 `;
 
 const ImgContainer = styled.div`

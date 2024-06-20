@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProductCard from "./ProductCard";
+import ProductCardGrid from "./ProductCardGrid";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useRef } from "react";
 
@@ -206,7 +206,7 @@ const RecommendedProducts = () => {
 
         <Products ref={productContainerRef}>
           {newlyArrivalproductsList.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCardGrid key={product.id} product={product} />
           ))}
         </Products>
         <ScrollButton onClick={scrollRight}>

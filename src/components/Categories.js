@@ -101,6 +101,7 @@ const CategoryItem = styled.li`
   cursor: pointer;
   font-size: 17px;
   font-weight: 500;
+  box-shadow: 1px 1px 5px 1px #bfbfbf;
 `;
 
 const ScrollButton = styled.button`
