@@ -1,21 +1,16 @@
 import styled from "styled-components";
+import { GoHeartFill } from "react-icons/go";
 
 const ProductCard = ({ product }) => {
-  const {
-    id,
-    title,
-    price,
-    description,
-    images,
-    creationAt,
-    updatedAt,
-    category,
-  } = product;
+  const { title, price, images } = product;
 
   const renderCard = () => {
     return (
       <Card>
         <ImgContainer>
+          <WishListBtn>
+            <GoHeartFill />
+          </WishListBtn>
           <Image src={images[0]} />
         </ImgContainer>
         <DetailsContainer>
@@ -50,6 +45,7 @@ const Card = styled.div`
 `;
 
 const ImgContainer = styled.div`
+  position: relative;
   height: 60%;
 `;
 
@@ -103,4 +99,22 @@ const DetailsContainer = styled.div`
     margin-top: auto;
     cursor: pointer;
   }
+`;
+
+const WishListBtn = styled.button`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  font-size: 28px;
+  background-color: transparent;
+  border: none;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px #bfbfbf;
+  cursor: pointer;
 `;

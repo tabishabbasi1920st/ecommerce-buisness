@@ -3,6 +3,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
+import { IoMdHeartEmpty } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const NavbarLinks = [
@@ -26,6 +27,13 @@ const NavbarLinks = [
     icon: <AiOutlineShoppingCart fontSize={30} />,
     route: "/cart",
     title: "Cart",
+  },
+  {
+    id: "WISHLIST",
+    name: "WishList",
+    icon: <IoMdHeartEmpty fontSize={30} />,
+    route: "/wishlist",
+    title: "WishList",
   },
   {
     id: "ABOUT_US",
@@ -53,12 +61,7 @@ const Navbar = () => {
     return (
       <NavLinksContainer>
         {NavbarLinks.map((link) => (
-          <CustomNavLink
-            key={link.id}
-            to={link.route}
-            title={link.title}
-            isActive={isLinkActive(link.route)}
-          >
+          <CustomNavLink key={link.id} to={link.route} title={link.title}>
             <LinkButton isActive={isLinkActive(link.route)}>
               {link.icon}
             </LinkButton>
@@ -101,10 +104,6 @@ const NavLinksContainer = styled.ul`
 `;
 
 const CustomNavLink = styled(NavLink)`
-  color: ${({ isActive }) => (isActive ? "red" : "#fff")};
-  background-color: ${({ isActive }) => (isActive ? "#fff" : "transparent")};
-  box-shadow: ${({ isActive }) =>
-    isActive ? "1px 1px 5px 1px #bfbfbf" : "transparent"};
   border-radius: 5px;
 
   @media screen and (min-width: 576px) {
