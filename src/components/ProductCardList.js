@@ -62,7 +62,7 @@ const Card = styled.div`
 
 const ImageContainer = styled.div`
   height: 100%;
-  width: 50%;
+  flex-shrink: 0;
   max-width: 300px;
 `;
 
@@ -79,6 +79,7 @@ const DetailsContainer = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 
   .card-title {
     max-height: 60px;
