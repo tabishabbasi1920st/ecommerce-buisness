@@ -13,7 +13,7 @@ const MainContainer = styled.header`
   top: 0px;
   z-index: 5000;
 
-  @media screen and (min-width: 1024px) {
+  /* @media screen and (min-width: 1024px) {
     padding: 0px 5%;
-  }
+  } */
 `;

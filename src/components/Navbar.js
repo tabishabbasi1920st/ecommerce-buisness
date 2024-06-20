@@ -3,42 +3,35 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const NavbarLinks = [
   {
     id: "SEARCH",
     name: "Search",
-    icon: <IoSearch fontSize={33} />,
+    icon: <IoSearch fontSize={25} />,
     route: "/search",
     title: "Search",
   },
   {
     id: "USER",
     name: "User",
-    icon: <FaRegUser fontSize={28} />,
+    icon: <FaRegUser fontSize={22} />,
     route: "/user-profile",
     title: "Profile",
   },
   {
     id: "CART",
     name: "Cart",
-    icon: <AiOutlineShoppingCart fontSize={30} />,
+    icon: <AiOutlineShoppingCart fontSize={26} />,
     route: "/cart",
     title: "Cart",
   },
-  {
-    id: "WISHLIST",
-    name: "WishList",
-    icon: <IoMdHeartEmpty fontSize={30} />,
-    route: "/wishlist",
-    title: "WishList",
-  },
+
   {
     id: "ABOUT_US",
     name: "AboutUs",
-    icon: <BiMessageSquareDetail fontSize={30} />,
+    icon: <BiMessageSquareDetail fontSize={25} />,
     route: "/about-us",
     title: "About Us",
   },
@@ -99,7 +92,7 @@ const NavLinksContainer = styled.ul`
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-left: auto;
 `;
 
@@ -112,7 +105,7 @@ const CustomNavLink = styled(NavLink)`
 `;
 
 const LinkButton = styled.button`
-  height: 40px;
+  height: 32px;
   padding: 3px;
   border-radius: 5px;
   border: none;

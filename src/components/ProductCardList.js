@@ -50,7 +50,7 @@ const MainContainer = styled.li`
     width: 50%;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     width: 33.33%;
   }
 `;

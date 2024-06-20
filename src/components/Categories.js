@@ -74,6 +74,10 @@ export default Categories;
 const MainContainer = styled.div`
   display: flex;
   overflow: hidden;
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+  background-color: white;
 `;
 
 const CategoriesContainer = styled.ul`
