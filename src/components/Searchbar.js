@@ -51,6 +51,7 @@ const CustomBtn = styled.button`
   border: none;
   font-size: 16px;
   cursor: pointer;
+  background-color: #fff;
   &:hover {
     box-shadow: 1px 1px 5px 1px #bfbfbf;
   }
