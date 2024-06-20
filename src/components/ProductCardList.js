@@ -120,6 +120,9 @@ const DetailsContainer = styled.div`
     color: #fff;
     margin-top: auto;
     cursor: pointer;
+    &:hover {
+      box-shadow: 2px 2px 15px 5px #bfbfbf;
+    }
   }
 `;
 
@@ -139,4 +142,7 @@ const WishListBtn = styled.button`
   border-radius: 10px;
   box-shadow: 1px 1px 5px 1px #bfbfbf;
   cursor: pointer;
+  &:hover {
+    box-shadow: 2px 2px 15px 5px #bfbfbf;
+  }
 `;

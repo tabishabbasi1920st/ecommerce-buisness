@@ -98,6 +98,10 @@ const DetailsContainer = styled.div`
     color: #fff;
     margin-top: auto;
     cursor: pointer;
+
+    &:hover {
+      box-shadow: 2px 2px 15px 5px #bfbfbf;
+    }
   }
 `;
 
