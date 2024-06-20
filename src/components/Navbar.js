@@ -40,7 +40,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const renderLogo = () => (
-    <LogoTxt onClick={() => navigate("/")}>Logo</LogoTxt>
+    <LogoTxt onClick={() => navigate("/")}>BigBasket</LogoTxt>
   );
 
   const isLinkActive = (route) => {
@@ -102,7 +102,9 @@ const NavLinksContainer = styled.ul`
 
 const CustomNavLink = styled(NavLink)`
   color: ${({ isActive }) => (isActive ? "red" : "#fff")};
-  background-color: ${({ isActive }) => (isActive ? "#c8e6c9" : "transparent")};
+  background-color: ${({ isActive }) => (isActive ? "#fff" : "transparent")};
+  box-shadow: ${({ isActive }) =>
+    isActive ? "1px 1px 5px 1px #bfbfbf" : "transparent"};
   border-radius: 5px;
 
   @media screen and (min-width: 576px) {
@@ -115,8 +117,9 @@ const LinkButton = styled.button`
   padding: 3px;
   border-radius: 5px;
   border: none;
-  background-color: ${({ isActive }) => (isActive ? "#c8e6c9" : "transparent")};
+  background-color: ${({ isActive }) => (isActive ? "#fff" : "transparent")};
   color: ${({ isActive }) => (isActive ? "#757575" : "#fff")};
+  box-shadow: ${({ isActive }) => (isActive ? "1px 1px 5px 1px #bfbfbf" : "")};
 
   @media screen and (min-width: 576px) {
     display: none;
