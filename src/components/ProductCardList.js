@@ -40,7 +40,12 @@ const MainContainer = styled.li`
   height: 200px;
   margin-bottom: 10px;
   /* border: 2px solid red; */
-  padding: 10px;
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    padding: 5px;
+  }
 
   @media screen and (max-width: 767px) {
     width: 100%;
