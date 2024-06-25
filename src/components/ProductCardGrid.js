@@ -33,7 +33,12 @@ const MainContainer = styled.li`
   min-width: 300px;
   height: 350px;
   /* border: 2px solid red; */
-  padding-right: 15px;
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    padding: 5px;
+  }
 `;
 
 const Card = styled.div`
