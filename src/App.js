@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import WishList from "./pages/WishList";
 import UserProfile from "./pages/UserProfile";
 import AboutUs from "./pages/AboutUs";
+import YourOrders from "./pages/YourOrders";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -23,6 +24,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/your-orders" element={<YourOrders />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
