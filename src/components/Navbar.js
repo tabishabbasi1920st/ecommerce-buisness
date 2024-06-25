@@ -117,9 +117,8 @@ const LinkButton = styled.button`
   padding: 3px;
   border-radius: 5px;
   border: none;
-  background-color: ${({ isActive }) => (isActive ? "#fff" : "transparent")};
-  color: ${({ isActive }) => (isActive ? "#757575" : "#fff")};
-  box-shadow: ${({ isActive }) => (isActive ? "1px 1px 5px 1px #bfbfbf" : "")};
+  background-color: ${({ isActive }) => (isActive ? "#C8E6C9" : "transparent")};
+  color: ${({ isActive }) => (isActive ? "#757575" : "#f0f0f0")};
 
   @media screen and (min-width: 576px) {
     display: none;
@@ -127,7 +126,7 @@ const LinkButton = styled.button`
 `;
 
 const LinkName = styled.p`
-  color: ${({ isActive }) => (isActive ? "#757575" : "#fff")};
+  color: ${({ isActive }) => (isActive ? "#757575" : "#f0f0f0")};
   font-size: 18px;
 
   @media screen and (max-width: 576px) {
