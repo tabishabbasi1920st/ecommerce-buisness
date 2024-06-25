@@ -101,7 +101,7 @@ const CategoryItem = styled.li`
   height: 40px;
   width: auto;
   background-color: ${({ isSelected }) => (isSelected ? "#4CAF50" : "#c8e6c9")};
-  color: ${({ isSelected }) => (isSelected ? "#fff" : "#36454f")};
+  color: ${({ isSelected }) => (isSelected ? "#fff" : "#7f7f7f")};
   cursor: pointer;
   font-size: 17px;
   font-weight: 500;
