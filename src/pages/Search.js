@@ -943,6 +943,10 @@ const Main = styled.main`
 `;
 
 const FilterBtn = styled.button`
+  box-shadow: 1px 1px 5px 1px #bfbfbf;
+  position: sticky;
+  top: 130px;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Ecommerce Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    In this project we will build an ecommerce application completely, means both frontend and backend & customer can buy or sell his/her products, basically in this website i will add seller section also to sell product on our plateform.
 
-## Available Scripts
+# Tech Stack
 
-In the project directory, you can run:
+    CLIENT: HTML, CSS, JS, React, React-Context
+    SERVER: Node.js, Express.js
+    DATABASE: SQLite
 
-### `npm start`
+# Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    FRONTEND: Netlify.com
+    BACKEND: Render.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# User-Authentication
 
-### `npm test`
+    FIREBASE (Number auth by OTP)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Pages / Routes
 
-### `npm run build`
+    1. Home.
+    2. About us.
+    3. Cart.
+    4. Product Details.
+    5. Checkout.
+    6. Sign Up.
+    7. Sign In.
+    8. Not Found
+    9. Admin panel
+    10. Search
+    11. WishList
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 1. Home Route
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - Navbar Section
+    - Banner Section
+    - Categories Section
+    - Recommended Products Section
+    - Products Section
+    - Footer Section
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 2. About us
 
-### `npm run eject`
+    - Navbar Section
+    - About us Section
+    - Footer Section
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 3. Cart
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Navbar Section
+    - Cart Section
+    - Footer Section
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### 4. Product Details
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - Navbar Section
+    - Product Details Section
+    - Similar Products Section
+    - Footer Section
 
-## Learn More
+#### 5. Checkout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - Navbar Section
+    - Checkout Section
+    - Footer Section
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 6. Sign Up
 
-### Code Splitting
+    - Navbar Section
+    - Sign Up Section
+    - Footer Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 7. Sign In
 
-### Analyzing the Bundle Size
+    - Navbar Section
+    - Sign In Section
+    - Footer Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### 8. Not Found
 
-### Making a Progressive Web App
+    - Navbar Section
+    - Not Found Section
+    - Footer Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### 9. Admin Panel
 
-### Advanced Configuration
+    ----
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### 10. Search
 
-### Deployment
+    - Navbar Section
+    - Filter Section
+    - Search Results Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# components
 
-### `npm run build` fails to minify
+    1. Navbar
+    Description:- Home, About Us, Cart, UserProfile, Search
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    2. Banner Section
+    Description:- Minimum 10 clickable slides with dot highlighter, and arrow button to go backward and forward.
+
+    3. Categories Section
+    Description:- Category Tabs to select and see product to relavant category, Like: Clothes, Watches, Wearables, Kitchen, Laundry, Toys,
+
+    4. Recommended Product Section
+    Description:- Product recommendation should be relavant for particular user.
+    Basically Card of product should be displayed there according to the interest of the user.
+
+    5. Product Section
+    Description:- First section should be a filter section which contain different filters like SortByPriceHighToLow, SortByPriceLowToHigh, SortByRatingHighToLow, SortByRatingLowToHigh, NewlyAddedProductFirst, NewlyAddedProductLast, and below of this section should be products section will be there.
+
+    6. Footer Section
+    Description:- Website Details, Terms & Condition, Social Media contact details,
+    Copyright, and Contact Us Section should be there.
+
+    7. Order Summary 
+    Description:- To tell the total amount and the summary of all products.
+
+    8. Product Card Builder
+    Description:- Product card builder will make all the cards of the product which will be displayed in the products, similar products, recommended product sections.
+
+    9. Similar Products Section
+    Description:- we will show some similar products related to that product which is opened by a user to see its product's details.
+
+    10. Checkout Section
+    Description:- User will fill his Address details, and pay the amount of the products order by the user then a button to placed order successfully.
